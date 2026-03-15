@@ -7,21 +7,38 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <nav class="navbar">
+  <div class="nav-quote" id="nav-quote"></div>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
 
-  <header>
+<header>
     <h1>Extreme11ama</h1>
     <p>Fledgling Software Developer · Game Dev Enthusiast</p>
   </header>
 
   <main>
-    <section>
+    <section id="projects">
       <h2>Projects</h2>
       <!--<p>More coming soon.</p>-->
       <div class="projects-grid">
 
-      <div class="card">
+      <div class="card" onclick="openModal('rokos')">
       <h3>Roko's Basilisk</h3>
       <p>Game.</p>
+      <div class="card-links">
+        <a href="#">GitHub</a>
+        <a href="#">Live Demo</a>
+      </div>
+      </div>
+
+      <div class="card" onclick="openModal('otaku')">
+      <h3>Otaku oracle</h3>
+      <p>Website.</p>
       <div class="card-links">
         <a href="#">GitHub</a>
         <a href="#">Live Demo</a>
@@ -31,11 +48,40 @@
       </div>
     </section>
 
-    <section>
+    <section id="contact">
       <h2>Contact</h2>
       <p>Email: WasifRam@gmail.com</p>
     </section>
   </main>
+<!-- MODAL OVERLAY -->
+  <div class="modal-overlay" id="modal-overlay" onclick="closeModal()">
+    <div class="modal" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="closeModal()">✕</button>
+      <div class="modal-content" id="modal-content"></div>
+    </div>
+  </div>
 
+  <!-- PROJECT DATA -->
+  <div id="rokos-data" class="project-data" style="display:none">
+    <h2>Roko's Basilisk</h2>
+    <!-- <img src="your-screenshot.png" alt="Roko's Basilisk screenshot"> -->
+    <p>Roko's Basilisk is a first person shooter game with minor roguelike elements seeking to redefine player immersion by offering an adaptive, procedurally generated experience tailored to individual playstyles. The game employs constraint satisfaction techniques to analyze a number of performance statistics gathered at the end of each level to identify player strengths and weaknesses. This analysis guides the dynamic construction of subsequent levels, ensuring that each level challenges and evolves alongside the player. In conjunction with this, behaviour trees were created to guide the enemy combatants the player will be facing. These enemies will also have their own statistics adjusted in accordance to the player's performance throughout the game. The result is a uniquely personalized gameplay experience where no two players, nor gameplay sessions, are ever identical.</p>
+    <div class="card-links">
+      <a href="#">GitHub</a>
+      <a href="#">Live Demo</a>
+    </div>
+  </div>
+
+  <div id="otaku-data" class="project-data" style="display:none">
+    <h2>Otaku Oracle</h2>
+    <!-- <img src="your-screenshot.png" alt="Otaku Oracle screenshot"> -->
+    <p>Description coming soon.</p>
+    <div class="card-links">
+      <a href="#">GitHub</a>
+    </div>
+  </div>
+  <script src="script.js"></script>
 </body>
+
+
 </html>
