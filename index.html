@@ -22,6 +22,25 @@
   </header>
 
   <main>
+    <section id="about">
+      <h2>About</h2>
+      <p>Hi. I'm a software developer with a focus on building interactive applications and exploring how systems behave under the hood.
+        I've worked with Java, C++, and REST APIs, and I enjoy turning ideas into working systems-whether that's a puzzle game, a testing suite, or a UI that actually feels good to use.
+        Lately, I've been especially interested in game development and animation systems, and how player experience can be shaped through design and logic.
+        Outside of coding, I'm usually watching movies, exploring game design concepts, or figuring out how things break (and how to fix them).</p>
+      <!-- <h3>Skills: </h3> -->
+    <div class="skills">
+      <span class="skills-label">Skills:</span>
+      <span class="skill-tag">Python</span>
+      <span class="skill-tag">C++</span>
+      <span class="skill-tag">Game Dev</span>
+      <span class="skill-tag">Unity</span>
+      <span class="skill-tag">SQL</span>
+      <span class="skill-tag">REST API</span>
+      <span class="skill-tag">Unreal Engine</span>
+      <span class="skill-tag">CI/CD</span>
+    </div>
+    </section>
     <section id="projects">
       <h2>Projects</h2>
       <!--<p>More coming soon.</p>-->
@@ -29,22 +48,43 @@
 
       <div class="card" onclick="openModal('rokos')">
       <h3>Roko's Basilisk</h3>
-      <p>Game.</p>
+      <p>Game. Adaptive FPS with procedural generation</p>
       <div class="card-links">
-        <a href="#">GitHub</a>
+        <a href="https://github.com/PurgatoryIsHere/Rokos_Basilisk" target="_blank">GitHub</a>
         <a href="#">Live Demo</a>
       </div>
       </div>
 
       <div class="card" onclick="openModal('otaku')">
-      <h3>Otaku oracle</h3>
+      <h3>Otaku Oracle</h3>
+      <p>Website. Manga search engine with dynamic pages</p>
+      <div class="card-links">
+        <a href="https://github.com/Guuzzeji/CSCI-367-Group-Project" target="_blank">GitHub</a>
+        <a href="#">Live Demo</a>
+      </div>
+      </div>
+
+      <div class="card" onclick="openModal('automated')">
+      <h3>Automation Framework</h3>
+      <p>Test Automation. Automated UI testing framework using Python, Playwright, and PyTest</p>
+      <div class="card-links">
+        <a href="https://github.com/Extreme11ama/Playwright-Automation-Framework" target="_blank">GitHub</a>
+        <a href="#">Live Demo</a>
+      </div>
+      </div>
+
+      </div>
+      
+      <h3>What I'm currently working on: </h3>
+      <div class="projects-grid">
+      <div class="card" onclick="openModal('crud')">
+      <h3>Crud Website</h3>
       <p>Website.</p>
       <div class="card-links">
         <a href="#">GitHub</a>
         <a href="#">Live Demo</a>
       </div>
       </div>
-
       </div>
     </section>
 
@@ -64,16 +104,42 @@
   <!-- PROJECT DATA -->
   <div id="rokos-data" class="project-data" style="display:none">
     <h2>Roko's Basilisk</h2>
-    <!-- <img src="your-screenshot.png" alt="Roko's Basilisk screenshot"> -->
-    <p>Roko's Basilisk is a first person shooter game with minor roguelike elements seeking to redefine player immersion by offering an adaptive, procedurally generated experience tailored to individual playstyles. The game employs constraint satisfaction techniques to analyze a number of performance statistics gathered at the end of each level to identify player strengths and weaknesses. This analysis guides the dynamic construction of subsequent levels, ensuring that each level challenges and evolves alongside the player. In conjunction with this, behaviour trees were created to guide the enemy combatants the player will be facing. These enemies will also have their own statistics adjusted in accordance to the player's performance throughout the game. The result is a uniquely personalized gameplay experience where no two players, nor gameplay sessions, are ever identical.</p>
+    <img src="assets/images/image13.jpg" alt="Roko's Basilisk screenshot">
+    <p>Roko's Basilisk is a first-person shooter with roguelike elements that adapts to the player's performance. Using constraint satisfaction techniques, the game analyzes player stats after each level to dynamically generate new levels and adjust enemy behavior through behavior trees. The result is a personalized experience where each playthrough evolves based on the player's strengths and weaknesses.</p>
     <div class="card-links">
-      <a href="#">GitHub</a>
+      <a href="https://github.com/PurgatoryIsHere/Rokos_Basilisk" target="_blank">GitHub</a>
       <a href="#">Live Demo</a>
     </div>
   </div>
 
   <div id="otaku-data" class="project-data" style="display:none">
     <h2>Otaku Oracle</h2>
+    <img src="assets/images/image4.png" alt="Otaku Oracle screenshot">
+    <p>OtakuOracle is a manga search engine designed to help users easily discover and explore titles based on criteria such as author, genre, and themes. Inspired by platforms like MyAnimeList, it provides a clean, intuitive interface with dynamically generated pages for detailed manga information. The project emphasizes fast, user-friendly search functionality and a modular design, making it easy to navigate and expand.</p>
+    <div class="card-links">
+      <a href="https://github.com/Guuzzeji/CSCI-367-Group-Project" target="_blank">GitHub</a>
+    </div>
+  </div>
+
+  <div id="automated-data" class="project-data" style="display:none">
+    <h2>Automated Testing Framework</h2>
+    <!-- <img src="your-screenshot.png" alt="Otaku Oracle screenshot"> -->
+    <p>An end-to-end test automation framework built using Playwright to validate
+    core functionality of a web application. The framework includes structured
+    test suites, reusable test components, and automated validation of user flows.</p>
+    <ul>
+    <li>Automated UI testing using Playwright</li>
+    <li>Structured and reusable test cases</li>
+    <li>Covers login, navigation, and user workflows</li>
+    <li>Designed for scalability and maintainability</li>
+  </ul>
+    <div class="card-links">
+      <a href="https://github.com/Extreme11ama/Playwright-Automation-Framework" target="_blank">GitHub</a>
+    </div>
+  </div>
+
+  <div id="crud-data" class="project-data" style="display:none">
+    <h2>Crud Website</h2>
     <!-- <img src="your-screenshot.png" alt="Otaku Oracle screenshot"> -->
     <p>Description coming soon.</p>
     <div class="card-links">
