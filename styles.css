@@ -26,13 +26,25 @@ body {
 }
 
 .hero-btn {
-  background: transparent;
+  /*background: transparent;
   border: 1px solid #334155;
   color: #e5e7eb;
   padding: 0.6rem 1.5rem;
   border-radius: 6px;
   text-decoration: none;
   font-size: 0.95rem;
+  transition: border-color 0.2s ease, color 0.2s ease;*/
+  background: transparent;
+  border: 1px solid #334155;
+  color: #e5e7eb;
+  width: 2.8rem;
+  height: 2.8rem;
+  border-radius: 50%;
+  text-decoration: none;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   transition: border-color 0.2s ease, color 0.2s ease;
 }
 
@@ -42,9 +54,15 @@ body {
 }
   
   h1 {
-    font-size: 3rem;
+    font-size: 6rem;
     margin-bottom: 0rem;
     margin-top: 0.5rem;
+  }
+
+  header p{
+    font-size: 1.3rem;
+    color: #94a3b8;
+
   }
   
   h2 {
@@ -60,7 +78,7 @@ body {
 }
   
 
-  .projects-grid {
+.projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 1.5rem;
