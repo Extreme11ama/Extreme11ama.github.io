@@ -27,3 +27,23 @@ const quotes = [
 const q = quotes[Math.floor(Math.random() * quotes.length)];
 document.getElementById('nav-quote').innerHTML = 
   `"${q.text}" <span class="quote-movie">- ${q.movie}</span>`;
+
+window.addEventListener('scroll', function() {
+    const sections = ['about', 'projects', 'contact'];
+    const colors = {
+        about: '#0f172a',
+        projects: '#1b3c55',
+        contact: '#0f172a'
+    };
+
+    let current = 'about';
+    for (const id of sections) {
+        const section = document.getElementById(id);
+        if (section && window.scrollY >= section.offsetTop - 200) {
+            current = id;
+        }
+    }
+
+    document.body.style.transition = 'background 0.6s ease';
+    document.body.style.background = colors[current];
+});
