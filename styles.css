@@ -76,6 +76,8 @@ body {
   section {
     scroll-margin-top: 60px;
 }
+
+
   
 
 .projects-grid {
@@ -210,8 +212,9 @@ body {
 .skills {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
+  gap: 1.2rem;
   margin-top: 1rem;
+  align-items: center;
 }
 
 /*.skill-tag {
@@ -228,9 +231,10 @@ body {
   display: inline-block;
   border: 1px solid #334155;
   color: #94a3b8;
-  padding: 0.3rem 0.8rem;
+  /*padding: 0.3rem 0.8rem;*/
+  padding: 0.5rem 1.2rem;
   border-radius: 999px;
-  font-size: 0.85rem;
+  font-size: 1.25rem;
   /*font-weight: 600;*/
   transition: transform 0.2s ease, opacity 0.2s ease;
   cursor: default;
@@ -252,4 +256,31 @@ body {
 #about p {
   font-size: 1.1rem;
   line-height: 1.7;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  margin-top: 0rem;
+  align-items: start;
+}
+
+#about h2 {
+  /*margin-top: 0;*/
+  margin-bottom: 0;
+}
+
+/*.about-grid p {
+  margin-top: 0;
+}*/
+
+.skills i {
+  font-size: 4rem;
+  transition: transform 0.2s ease;
+  cursor: default;
+}
+
+.skills i:hover {
+  transform: translateY(-4px);
 }
