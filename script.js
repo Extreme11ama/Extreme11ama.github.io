@@ -16,17 +16,34 @@ document.addEventListener('keydown', function(e) {
 
 
 const quotes = [
-  { text: "Why so serious?", movie: "The Dark Knight" },
-  { text: "Just keep swimming.", movie: "Finding Nemo" },
-  { text: "To infinity and beyond!", movie: "Toy Story" },
-  { text: "I am inevitable.", movie: "Avengers: Endgame" },
-  { text: "You can't handle the truth!", movie: "A Few Good Men" },
-  {text: "Hail to the king, baby.", movie: "Army of Darkness"}
+  { text: "Why so serious?", movie: "The Dark Knight", url: "https://www.imdb.com/title/tt0468569/" },
+  { text: "Just keep swimming.", movie: "Finding Nemo", url: "https://www.imdb.com/title/tt0266543/" },
+  { text: "To infinity and beyond!", movie: "Toy Story", url: "https://www.imdb.com/title/tt0114709/" },
+  { text: "I am inevitable.", movie: "Avengers: Endgame", url: "https://www.imdb.com/title/tt4154796/" },
+  { text: "You can't handle the truth!", movie: "A Few Good Men", url: "https://www.imdb.com/title/tt0104257/" },
+  { text: "Hail to the king, baby.", movie: "Army of Darkness", url: "https://www.imdb.com/title/tt0106308/"},
+  { text: "All those moments will be lost in time, like tears in rain.", movie: "Blade Runner", url: "https://www.imdb.com/title/tt0083658/"}
 ];
 
+/*
 const q = quotes[Math.floor(Math.random() * quotes.length)];
 document.getElementById('nav-quote').innerHTML = 
-  `"${q.text}" <span class="quote-movie">- ${q.movie}</span>`;
+  `"${q.text}" <span class="quote-movie">- ${q.movie}</span>`;*/
+
+let currentQuote = Math.floor(Math.random() * quotes.length);
+
+function showQuote() {
+  const q = quotes[currentQuote];
+  document.getElementById('nav-quote').innerHTML = 
+    `"${q.text}" <span class="quote-movie">- <a href="${q.url}" target="_blank">${q.movie}</span>`;
+}
+
+function nextQuote() {
+  currentQuote = (currentQuote + 1) % quotes.length;
+  showQuote();
+}
+
+showQuote();
 
 window.addEventListener('scroll', function() {
     const sections = ['about', 'projects', 'contact'];
