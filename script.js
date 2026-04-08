@@ -64,3 +64,68 @@ window.addEventListener('scroll', function() {
     document.body.style.transition = 'background 0.6s ease';
     document.body.style.background = colors[current];
 });
+
+
+const pCanvas = document.getElementById('particle-canvas');
+const pCtx = pCanvas.getContext('2d');
+
+pCanvas.width = pCanvas.offsetWidth;
+pCanvas.height = pCanvas.offsetHeight;
+
+const dots = [];
+const DOT_COUNT = 80;
+const MAX_DIST = 150;
+
+for (let i = 0; i < DOT_COUNT; i++) {
+  dots.push({
+    x: Math.random() * pCanvas.width,
+    y: Math.random() * pCanvas.height,
+    vx: (Math.random() - 0.5) * 0.8,
+    vy: (Math.random() - 0.5) * 0.8,
+    radius: Math.random() * 2 + 1
+  });
+}
+
+function drawParticles() {
+  pCtx.clearRect(0, 0, pCanvas.width, pCanvas.height);
+
+  for (let i = 0; i < dots.length; i++) {
+    const d = dots[i];
+
+    d.x += d.vx;
+    d.y += d.vy;
+
+    if (d.x < 0 || d.x > pCanvas.width) d.vx *= -1;
+    if (d.y < 0 || d.y > pCanvas.height) d.vy *= -1;
+
+    pCtx.beginPath();
+    pCtx.arc(d.x, d.y, d.radius, 0, Math.PI * 2);
+    pCtx.fillStyle = '#60a5fa';
+    pCtx.fill();
+
+    for (let j = i + 1; j < dots.length; j++) {
+      const d2 = dots[j];
+      const dx = d.x - d2.x;
+      const dy = d.y - d2.y;
+      const dist = Math.sqrt(dx * dx + dy * dy);
+
+      if (dist < MAX_DIST) {
+        pCtx.beginPath();
+        pCtx.moveTo(d.x, d.y);
+        pCtx.lineTo(d2.x, d2.y);
+        pCtx.strokeStyle = `rgba(96, 165, 250, ${1 - dist / MAX_DIST})`;
+        pCtx.lineWidth = 0.5;
+        pCtx.stroke();
+      }
+    }
+  }
+
+  requestAnimationFrame(drawParticles);
+}
+
+drawParticles();
+
+window.addEventListener('resize', () => {
+  pCanvas.width = pCanvas.offsetWidth;
+  pCanvas.height = pCanvas.offsetHeight;
+});

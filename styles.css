@@ -8,7 +8,8 @@ body {
   
   header {
     /*margin-top: 0;*/
-
+position: relative;
+  overflow: hidden;
     /*margin-bottom: 3rem;*/
     min-height: calc(100vh - 60px);
     display: flex;
@@ -124,7 +125,7 @@ body {
 }
 
 .modal-overlay {
-  display: none;
+  display: none; /* comment this out to add animation*/
   position: fixed;
   inset: 0;
   background: rgba(0, 0, 0, 0.7);
@@ -132,10 +133,18 @@ body {
   justify-content: center;
   align-items: center;
   padding: 2rem;
+
+  
+  /*display: flex;  uncomment this out to add animation
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;*/
 }
 
 .modal-overlay.active {
   display: flex;
+  /*opacity: 1; uncomment this out to add animation
+  pointer-events: auto;*/
 }
 
 .modal {
@@ -148,7 +157,17 @@ body {
   max-height: 80vh;
   overflow-y: auto;
   position: relative;
+
+  /*
+  transform: scale(0.9); uncomment this out to add animation
+  opacity: 0;
+  transition: transform 0.2s ease, opacity 0.2s ease;*/
 }
+
+/*.modal-overlay.active .modal { uncomment this out to add animation
+  transform: scale(1);
+  opacity: 1;
+}*/
 
 .modal h2 {
   margin-bottom: 1rem;
@@ -375,3 +394,14 @@ body {
 #contact p {
   margin-top: 0;
 }
+
+#particle-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.3;
+  pointer-events: none;
+}
+
